@@ -7,11 +7,10 @@ server.all("/check", (req, res) => {
   res.send("Bot is running");
 });
 
-export default function keepAlive() {
-  server.listen(3000, () => {
-    console.log("Server is ready");
-  });
-};
+server.listen(3000, () => {
+  console.log("Server is ready");
+});
+
 
 // Why can't I put this in its own file?????
 
