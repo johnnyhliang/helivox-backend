@@ -1,4 +1,26 @@
 'use strict';
+const Fastify = require('fastify');
+const fastify = Fastify({
+  logger: true
+})
+
+// Declare a route
+fastify.get('/', async function handler (request, reply) {
+  return { status: 'running' }
+})
+
+async function server(port) {
+  try {
+    await fastify.listen({ port: port })
+  } catch (err) {
+    fastify.log.error(err)
+    process.exit(1)
+  }
+}
+
+server(3000);
+
+// Why can't I put this in its own file?????
 
 module.exports = {
   /**

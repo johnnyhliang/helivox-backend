@@ -4,6 +4,14 @@
 
 Secret Sauce dropping soon!
 
+[Postgres Free Tier Comparison](https://www.koyeb.com/blog/top-postgresql-database-free-tiers-in-2024)
+
+![](https://www.youtube.com/watch?v=prjMJtXCR-g)
+
+*The video is a little outdated - railway no longer has a free tier :(*
+
+[Theo's 2023 Infra](https://t3.gg/blog/post/2023-infra)
+
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
 
 ## 🚀 Getting started with Strapi
