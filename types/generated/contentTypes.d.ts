@@ -788,6 +788,116 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiEventEvent extends Schema.CollectionType {
+  collectionName: 'events';
+  info: {
+    singularName: 'event';
+    pluralName: 'events';
+    displayName: 'Event';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    description: Attribute.String;
+    location: Attribute.String;
+    date: Attribute.DateTime;
+    rsvp: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::event.event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::event.event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFormSubmissionFormSubmission extends Schema.CollectionType {
+  collectionName: 'form_submissions';
+  info: {
+    singularName: 'form-submission';
+    pluralName: 'form-submissions';
+    displayName: 'Form Submission';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Inquiry: Attribute.Enumeration<
+      [
+        'General',
+        'Partnership',
+        'Opportunities',
+        'Media',
+        'Support',
+        'Feedback'
+      ]
+    >;
+    Name: Attribute.String;
+    Email: Attribute.String;
+    Phone: Attribute.String;
+    Message: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::form-submission.form-submission',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::form-submission.form-submission',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMemberMember extends Schema.CollectionType {
+  collectionName: 'members';
+  info: {
+    singularName: 'member';
+    pluralName: 'members';
+    displayName: 'Member';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    avatar: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    LinkedIn: Attribute.Component<'links.social-icon'>;
+    email: Attribute.String;
+    name: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::member.member',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::member.member',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -806,6 +916,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::event.event': ApiEventEvent;
+      'api::form-submission.form-submission': ApiFormSubmissionFormSubmission;
+      'api::member.member': ApiMemberMember;
     }
   }
 }

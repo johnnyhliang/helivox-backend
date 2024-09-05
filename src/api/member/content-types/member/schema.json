@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "members",
+  "info": {
+    "singularName": "member",
+    "pluralName": "members",
+    "displayName": "Member"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "avatar": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "LinkedIn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "links.social-icon"
+    },
+    "email": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

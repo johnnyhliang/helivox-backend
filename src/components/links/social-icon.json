@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_links_social_icons",
+  "info": {
+    "displayName": "Social Icon",
+    "icon": "discuss"
+  },
+  "options": {},
+  "attributes": {
+    "newTab": {
+      "type": "boolean"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}
