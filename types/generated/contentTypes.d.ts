@@ -871,6 +871,7 @@ export interface ApiMemberMember extends Schema.CollectionType {
     singularName: 'member';
     pluralName: 'members';
     displayName: 'Member';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -880,6 +881,7 @@ export interface ApiMemberMember extends Schema.CollectionType {
     LinkedIn: Attribute.Component<'links.social-icon'>;
     email: Attribute.String;
     name: Attribute.String;
+    title: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
