@@ -4,6 +4,8 @@
 
 Secret Sauce dropping soon!
 
+This is a workaround clone to host strapi for free using render + aiven postgres
+
 [Postgres Free Tier Comparison](https://www.koyeb.com/blog/top-postgresql-database-free-tiers-in-2024)
 
 ![](https://www.youtube.com/watch?v=prjMJtXCR-g)
